@@ -1,20 +1,29 @@
-let appelNombre = function(){
-let givenNumber = prompt("entre un nombre ! ");
-document.body.innerHTML += '<h2> le nombre est ' + givenNumber + '! </h2>';
-givenNumber = parseInt(givenNumber);
-console.log(givenNumber);
-return givenNumber;
+let joueur1 = function(){
+    let givenNumber = prompt("entre un nombre entre 0 et 50 ! ");
+    givenNumber = parseInt(givenNumber);
+    console.log(givenNumber);
+    while(givenNumber>50 || givenNumber<0){
+        alert("respectez mon autorité");
+        givenNumber = prompt("entre un nombre entre 0 et 50 ! ");
+        givenNumber = parseInt(givenNumber);
+    }
+    return givenNumber;
+    }
+
+let joueur2 = function(){
+let guessNumber = prompt("entre un nombre ! ");
+guessNumber = parseInt(guessNumber);
+return guessNumber;
 }
 
+
 let didIwin = function(){
-    let givenNumber;
-   givenNumber = appelNombre();
-    console.log(givenNumber);
-    if(givenNumber>22){
+    let guessNumber = joueur2();
+    if(guessNumber>givenNumber){
         alert("le nombre est plus grand");
         return false
     }   
-    else if (givenNumber<22){   
+    else if (guessNumber<givenNumber){   
         alert("le nombre est plus petit");
         return false;
     }else{
@@ -24,8 +33,14 @@ let didIwin = function(){
 }
 
 let gameplay = function(){
-    didIwin();
+   let ret = didIwin();
+   while(ret == false){
+
+    ret = didIwin();
+   }
+    return true;
+   
 }
 
-
+let givenNumber = joueur1();
 gameplay();
