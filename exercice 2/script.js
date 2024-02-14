@@ -17,8 +17,7 @@ return guessNumber;
 }
 
 
-let didIwin = function(){
-    let guessNumber = joueur2();
+let didIwin = function(givenNumber, guessNumber){
     if(guessNumber>givenNumber){
         alert("le nombre est plus grand");
         return false
@@ -33,14 +32,15 @@ let didIwin = function(){
 }
 
 let gameplay = function(){
-   let ret = didIwin();
+    let givenNumber = joueur1();
+    let guessNumber = joueur2();
+   let ret = didIwin(guessNumber, givenNumber);
    while(ret == false){
-
-    ret = didIwin();
+    guessNumber = joueur2();
+    ret = didIwin(guessNumber, givenNumber);
    }
     return true;
    
 }
 
-let givenNumber = joueur1();
 gameplay();
