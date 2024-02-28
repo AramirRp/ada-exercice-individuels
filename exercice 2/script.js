@@ -11,11 +11,10 @@ let joueur1 = function(){
     }
 
 let joueur2 = function(){
-let guessNumber = prompt("entre un nombre ! ");
-guessNumber = parseInt(guessNumber);
-return guessNumber;
+    let guessNumber = prompt("entre un nombre ! ");
+    guessNumber = parseInt(guessNumber);
+    return guessNumber;
 }
-
 
 let didIwin = function(givenNumber, guessNumber){
     if(guessNumber>givenNumber){
@@ -36,9 +35,10 @@ let gameplay = function(){
     let guessNumber = joueur2();
    let ret = didIwin(guessNumber, givenNumber);
    while(ret == false){
-    guessNumber = joueur2();
-    ret = didIwin(guessNumber, givenNumber);
-   }
+        guessNumber = joueur2();
+        ret = didIwin(guessNumber, givenNumber);
+        }
+    
     return true;
    
 }
