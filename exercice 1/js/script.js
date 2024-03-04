@@ -10,7 +10,7 @@ function askName(){
   //      document.body.innerHTML += '<h2> 👋 Bonjour ' + name + '! </h2>';
 //    }
 }
-
+//test
 //let date2 = window.prompt("quelle est ton année de naissance ?");
   //  let date1 = new Date();
  //   date1= date1.getFullYear();
