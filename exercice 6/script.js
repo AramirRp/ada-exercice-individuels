@@ -1,10 +1,10 @@
 let regex = /^[0-9]{2}[\/][0-9]{2}[\/][0-9]{4}$/g;
+let date="22/02/2022";
 
 function parseDate(date){
     let dateSplit=date.split('/');
     let day = parseInt(dateSplit[0]);
     let month = parseInt(dateSplit[1]);
-    console.log(day);
     let year = parseInt(dateSplit[2]);
 
     return [day, month, year];
@@ -45,8 +45,6 @@ function isValidDate(date) {
     } else {
         return "invalid date";
     }
-
-
 }
 
 function isPalindrome(date){
@@ -55,13 +53,49 @@ function isPalindrome(date){
         date=Number(dateSplit.join(''));
         let dateReverse = date.toString().split('').reverse().join('');
         if(date == dateReverse){
-            return "palindrome"
+            return true
         }else{
             return "not palindrome"
         }
     }
 }
 
+function newDate(date){
+    let dateSplit=date.split('/');
+    let day = parseInt(dateSplit[0]);
+    let month = parseInt(dateSplit[1]);
+    let year = parseInt(dateSplit[2]);
 
+    day++;
+    if(maxDaysInMonth(date)){
+        month++
+    }
+    if(day==31 && month==12){
+        year++
+    }
+}
 
-console.log(isPalindrome('22/02/2022'));
+// function getNextPalindrome(x){
+
+//     date = new Date(date)
+//     console.log(date);
+//     let i =0;
+
+//     while(i!=x){
+//         date.setDate(date.getDate() +1);
+
+//         if(isValidDate(date) == true){
+//             console.log(date);
+//         if(isPalindrome(date) == true){
+//             console.log(date);
+//             console.log(i);
+//             i++;
+            
+//         }
+//     }
+// }
+// }
+
+// console.log(isValidDate(date));
+console.log(isPalindrome(date));
+// console.log(getNextPalindrome(5));
